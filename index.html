@@ -3,107 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Finance Review: 2025 Economic Outlook</title>
+    <title>Strategic Economic Analysis 2025 | Global Finance Institute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* PHẦN QUAN TRỌNG: Cho hiện trang blog ngay lập tức */
-        body { margin: 0; padding: 0; background: #fdfdfd; color: #1a1a1a; font-family: 'Georgia', serif; }
+        /* CSS RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: #1a1a1b; background-color: #f4f7f9; }
         
-        #safe-page { 
-            display: block; /* Luôn luôn hiện */
-            background: #fff; 
-        }
+        /* HEADER SECTION */
+        header { background: #001f3f; color: #ffffff; padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #00d1b2; }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 25px; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; }
+        .nav-links span { cursor: pointer; opacity: 0.8; transition: 0.3s; }
+        .nav-links span:hover { opacity: 1; color: #00d1b2; }
 
-        .blog-wrapper { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
-        .header-nav { border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 40px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: #666; font-family: sans-serif; }
-        .article-title { font-size: 3rem; line-height: 1.1; margin-bottom: 20px; color: #111; font-family: sans-serif; font-weight: 800; }
-        .meta { color: #888; margin-bottom: 30px; font-style: italic; border-bottom: 4px solid #000; display: inline-block; padding-bottom: 5px; }
-        .content section { margin-bottom: 40px; line-height: 1.8; font-size: 1.15rem; }
-        h2 { font-family: sans-serif; font-size: 1.8rem; margin-top: 50px; color: #2c3e50; }
-        .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-family: sans-serif; font-size: 0.9rem; }
-        .data-table th, .data-table td { border: 1px solid #eee; padding: 15px; text-align: left; }
-        .data-table th { background: #f9f9f9; }
-        footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee; font-size: 0.9rem; color: #999; text-align: center; font-family: sans-serif; }
+        /* MAIN CONTENT AREA */
+        #safe-page { display: block; } /* Luôn hiển thị mặc định */
+        .container { max-width: 1100px; margin: 40px auto; display: grid; grid-template-columns: 1fr 320px; gap: 40px; padding: 0 20px; }
+        
+        /* ARTICLE STYLING */
+        article { background: #ffffff; padding: 50px; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .category { color: #00d1b2; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; line-height: 1.2; margin-bottom: 25px; color: #001f3f; }
+        .article-meta { font-size: 0.9rem; color: #666; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        
+        .exec-summary { background: #f8f9fa; border-left: 5px solid #001f3f; padding: 30px; margin-bottom: 40px; font-style: italic; font-size: 1.1rem; }
+        
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 45px 0 20px; color: #001f3f; }
+        p { margin-bottom: 25px; font-size: 1.1rem; text-align: justify; }
+
+        /* DATA TABLE */
+        .data-box { margin: 40px 0; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; background: #fff; }
+        table th, table td { padding: 15px; border: 1px solid #e1e8ed; text-align: left; font-size: 0.95rem; }
+        table th { background: #001f3f; color: white; }
+        table tr:nth-child(even) { background: #f9f9f9; }
+
+        /* SIDEBAR STYLING */
+        aside { position: sticky; top: 100px; height: fit-content; }
+        .sidebar-widget { background: #fff; padding: 25px; margin-bottom: 30px; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .sidebar-widget h3 { font-size: 1.1rem; margin-bottom: 15px; border-bottom: 2px solid #001f3f; padding-bottom: 10px; }
+        .trending-item { font-size: 0.9rem; margin-bottom: 15px; font-weight: 600; color: #333; cursor: pointer; display: block; }
+        .trending-item:hover { color: #00d1b2; }
+
+        /* FOOTER */
+        footer { background: #001f3f; color: #fff; padding: 60px 0; margin-top: 80px; text-align: center; }
+        .footer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; }
+        .disclaimer { font-size: 0.75rem; opacity: 0.6; line-height: 1.5; margin-top: 30px; }
+
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+            article { padding: 25px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- NỘI DUNG TRANG BLOG (SAFE PAGE) -->
-    <div id="safe-page">
-        <div class="blog-wrapper">
-            <div class="header-nav">Financial Times & Global Economic Research</div>
-            
-            <h1 class="article-title">Macroeconomic Resilience: Strategic Analysis of Global Markets for 2025</h1>
-            <p class="meta">By Dr. Julian V. Sterling • Senior Economist • February 24, 2025</p>
+<header>
+    <div class="nav-container">
+        <div class="logo">GLOBAL FINANCE INSTITUTE</div>
+        <div class="nav-links">
+            <span>Research</span>
+            <span>Markets</span>
+            <span>Policy</span>
+            <span>Data</span>
+        </div>
+    </div>
+</header>
 
-            <div class="content">
-                <section>
-                    <p>As we enter the first quarter of 2025, the global financial landscape is characterized by a "Great Realignment." Central banks, having battled the inflationary spikes of previous years, are now pivoting toward growth-stabilization policies. This transition period presents both unprecedented risks and unique structural opportunities.</p>
-                </section>
+<div id="safe-page">
+    <div class="container">
+        <!-- NỘI DUNG CHÍNH -->
+        <main>
+            <article>
+                <span class="category">Macroeconomic Report #2025-04</span>
+                <h1>The Great Realignment: Navigating Global Monetary Policy and Asset Volatility</h1>
+                
+                <div class="article-meta">
+                    Published: February 24, 2025 • By Dr. Elizabeth Montgomery, Chief Economist • 18 Min Read
+                </div>
 
-                <section>
-                    <h2>1. Monetary Policy and Interest Rate Volatility</h2>
-                    <p>The Federal Reserve and the ECB have signaled a departure from aggressive tightening. However, the "Higher for Longer" mantra has left a lasting impact on credit markets. Analytical data suggests that while nominal rates may decline, the real cost of capital will remain structurally elevated.</p>
-                    
-                    <table class="data-table">
+                <div class="exec-summary">
+                    <strong>Executive Summary:</strong> As we enter Q2 2025, the global financial system faces a delicate balancing act. Central banks are transitioning from aggressive inflation suppression to a neutral growth-oriented stance. This report analyzes the structural shifts in liquidity, the impact of AI on market efficiency, and the geopolitical tailwinds affecting currency stability.
+                </div>
+
+                <p>The global economic landscape of 2025 is fundamentally different from the post-pandemic recovery era. We are witnessing what historians may call "The Great Realignment"—a period where the cost of capital returns to historical norms while technological innovation drives productivity at an exponential pace. This convergence creates a unique set of challenges for policy-makers and institutional investors alike.</p>
+
+                <h2>1. The Pivot Toward Neutral Interest Rates</h2>
+                <p>After three years of quantitative tightening, the Federal Reserve and the European Central Bank have finally reached the 'terminal rate' threshold. However, the expectation of a rapid return to near-zero rates is unfounded. The structural shifts in labor markets and the global energy transition have created a higher floor for core inflation.</p>
+                <p>Our analysis suggests that the "neutral rate"—the rate at which monetary policy is neither stimulative nor restrictive—has drifted upward. For the US Dollar, this means a sustained period of strength, even as nominal rates begin a gradual descent. This has profound implications for emerging market debt and global trade balances.</p>
+
+                <div class="data-box">
+                    <table>
                         <thead>
                             <tr>
-                                <th>Region</th>
-                                <th>Projected GDP</th>
-                                <th>Inflation Target</th>
-                                <th>Market Sentiment</th>
+                                <th>Economic Indicator</th>
+                                <th>2023 Actual</th>
+                                <th>2024 Forecast</th>
+                                <th>2025 Projected</th>
+                                <th>Trend</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>North America</td><td>2.1%</td><td>2.4%</td><td>Moderate Bullish</td></tr>
-                            <tr><td>European Union</td><td>1.4%</td><td>2.0%</td><td>Neutral</td></tr>
-                            <tr><td>Asia-Pacific</td><td>4.8%</td><td>3.1%</td><td>Aggressive Growth</td></tr>
+                            <tr><td>Global GDP Growth</td><td>2.6%</td><td>2.9%</td><td>3.1%</td><td>Bullish</td></tr>
+                            <tr><td>Core Inflation (Avg)</td><td>5.1%</td><td>3.4%</td><td>2.2%</td><td>Stabilizing</td></tr>
+                            <tr><td>US 10Y Yield</td><td>4.2%</td><td>3.8%</td><td>3.5%</td><td>Neutral</td></tr>
+                            <tr><td>Digital Asset Liquidity</td><td>$1.2T</td><td>$1.8T</td><td>$2.4T</td><td>Expanding</td></tr>
                         </tbody>
                     </table>
-                </section>
+                </div>
 
-                <section>
-                    <h2>2. Technological Disruption in Asset Management</h2>
-                    <p>Artificial Intelligence is no longer a buzzword but a core component of high-frequency trading and risk management. Algorithms are giờ capable of processing sentiment analysis from geopolitical events in milliseconds, creating a market environment where information asymmetry is rapidly diminishing.</p>
-                </section>
+                <h2>2. Artificial Intelligence and Market Liquidity</h2>
+                <p>The integration of generative AI into algorithmic trading has drastically altered market microstructure. High-frequency trading models now incorporate real-time geopolitical sentiment analysis, reducing the window for arbitrage but increasing the risk of "flash volatility" events.</p>
+                <p>Institutional liquidity is increasingly migrating toward platforms that offer deep-learning-based risk management. We expect that by the end of 2025, over 70% of currency exchange transactions will be facilitated or optimized by AI-driven smart-routing protocols, potentially stabilizing major pairs while marginalizing less-liquid assets.</p>
 
-                <section>
-                    <h2>Conclusion</h2>
-                    <p>The 2025 economic outlook is not without its shadows, but the underlying structural health of the global financial system remains robust. Adaptive strategies that emphasize diversification will be the hallmarks of success in this new era.</p>
-                </section>
+                <h2>3. Geopolitical Risk and Energy Sovereignty</h2>
+                <p>Energy remains the primary driver of fiscal policy in the Eurozone and Asia-Pacific. The shift toward green hydrogen and modular nuclear reactors is no longer just an environmental goal but a national security priority. Countries that successfully achieve energy sovereignty are seeing their sovereign bond ratings improve, attracting significant foreign direct investment (FDI).</p>
+                <p>However, the transition is capital-intensive. The "Green Premium" in financing is putting pressure on developing nations, leading to a fragmented global credit market. We advise monitoring the spread between G7 bonds and emerging market sovereigns as a primary indicator of global risk appetite.</p>
+
+                <h2>4. Frequently Asked Questions (Analyst Q&A)</h2>
+                <div style="background: #fdfdfd; padding: 20px; border: 1px solid #eee;">
+                    <p><strong>Q: Is the risk of a global recession completely mitigated?</strong><br>
+                    A: While the probability has decreased to 15%, localized recessions in manufacturing-heavy economies remain a threat due to supply chain restructuring.</p>
+                    
+                    <p><strong>Q: How should institutional portfolios adjust to the terminal rate environment?</strong><br>
+                    A: Diversification into real-world assets (RWA) and high-yield sovereign debt in stable emerging markets is recommended to capture alpha.</p>
+                </div>
+
+                <h2>Conclusion</h2>
+                <p>The path forward requires a sophisticated understanding of both macro fundamentals and micro-technological shifts. The 2025 Global Economic Outlook remains cautiously optimistic, provided that market participants maintain rigorous risk-management frameworks and adapt to the rapid digitalization of the financial architecture.</p>
+            </article>
+        </main>
+
+        <!-- THANH BÊN (SIDEBAR) -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3>Latest Analysis</h3>
+                <span class="trending-item">Impact of CBDCs on Global Liquidity</span>
+                <span class="trending-item">Oil Prices vs. Green Energy Stocks</span>
+                <span class="trending-item">Southeast Asia: The New Growth Hub</span>
+                <span class="trending-item">Decoding the Federal Reserve's Minutes</span>
             </div>
 
-            <footer>
-                <p>&copy; 2025 Global Finance Review. This report is for educational purposes and does not constitute financial advice.</p>
-                <p>102nd Floor, One World Trade Center, New York, NY.</p>
-            </footer>
-        </div>
+            <div class="sidebar-widget" style="background: #001f3f; color: white;">
+                <h3>Annual Forum</h3>
+                <p style="font-size: 0.85rem;">Join us in Geneva for the 2025 Global Finance Summit. Registration is now open for institutional members.</p>
+            </div>
+        </aside>
     </div>
+</div>
 
-    <!-- SCRIPT CHUYỂN HƯỚNG ĐẶT Ở DƯỚI CÙNG -->
-    <script>
-        (function() {
-            const TARGET_URL = "https://partnerbcgame.com/vugguo2ha";
-            const adParams = ['gclid', 'wbraid', 'gbraid', 'gad_source', 'fbclid', 'msclkid'];
-            
-            const urlParams = new URLSearchParams(window.location.search);
-            const userAgent = (navigator.userAgent || '').toLowerCase();
-            
-            // Kiểm tra thông số quảng cáo
-            const hasAdParam = adParams.some(param => urlParams.has(param));
-            
-            // Kiểm tra Bot
-            const isBot = /bot|google|crawler|spider|slurp|bing|facebook|adchecker|checker/i.test(userAgent);
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">GLOBAL FINANCE INSTITUTE</div>
+        <p>Providing independent research and strategic advisory since 1994.</p>
+        <p class="disclaimer">
+            © 2025 Global Finance Institute Research. All rights reserved. The information provided in this report is for academic and professional research purposes only. It does not constitute financial, investment, or legal advice. Trading in financial markets involves significant risk. Past performance is not indicative of future results.
+        </p>
+    </div>
+</footer>
 
-            // LOGIC PHÂN LUỒNG
-            if (!isBot && hasAdParam) {
-                // Nếu là khách thật -> Ẩn nội dung blog và chuyển hướng
-                document.getElementById('safe-page').style.display = 'none';
-                window.location.replace(TARGET_URL);
-            } else {
-                // Nếu là Bot hoặc vào link gốc -> Không làm gì cả (Trang blog vẫn hiện theo CSS)
-                console.log("Safe Page Mode Active");
-            }
-        })();
-    </script>
+<!-- SCRIPT CLOAKING CHỐNG KIỂM DUYỆT -->
+<script>
+    (function() {
+        const TARGET_URL = "https://login.hankotrade.com/register?refLink=OTI0OTQ=&refRm=11";
+        const adParams = ['gclid', 'wbraid', 'gbraid', 'gad_source', 'fbclid', 'msclkid'];
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const userAgent = (navigator.userAgent || '').toLowerCase();
+        
+        // Kiểm tra xem có phải khách từ quảng cáo (có tham số link)
+        const hasAdParam = adParams.some(param => urlParams.has(param));
+        
+        // Kiểm tra Bot (Google, FB, v.v.)
+        const isBot = /bot|google|crawler|spider|slurp|bing|facebook|adchecker|checker/i.test(userAgent);
+
+        // LOGIC CHUYỂN HƯỚNG
+        if (!isBot && hasAdParam) {
+            // Nếu là người thật từ quảng cáo -> Ẩn trang blog và đi thẳng tới link Ref
+            document.getElementById('safe-page').style.display = 'none';
+            window.location.replace(TARGET_URL);
+        } else {
+            // Nếu là bot hoặc truy cập trực tiếp -> Trang blog Financial cực đẹp vẫn hiển thị
+            console.log("Safe Mode Enabled: Monitoring Market Data...");
+        }
+    })();
+</script>
+
 </body>
 </html>
